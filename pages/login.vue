@@ -73,7 +73,7 @@ const state = reactive({
     email: null,
     password: null,
     isPageLoading: false,
-    error: null
+    error: null,
 })
 
 async function login() {
@@ -81,6 +81,7 @@ async function login() {
     try {
         const cred = await signInWithEmailAndPassword($auth, state.email, state.password)
         userStore.setUser(cred.user)
+        navigateTo('/')
     } catch (error) {
         state.error = error.message
     }
