@@ -5,12 +5,12 @@
             <div class="flex flex-1 flex-col justify-center px-4 py-12 sm:px-6 lg:flex-none lg:px-20 xl:px-24">
                 <div class="mx-auto w-full max-w-sm lg:w-96">
                     <div>
-                        <img class="h-10 w-auto"
-                            src="https://tailwindcss.com/plus-assets/img/logos/mark.svg?color=indigo&shade=600"
-                            alt="Your Company" />
-
-                        <p class="mt-10 text-2xl font-bold">Create an account</p>
+                        <img class="h-10 w-auto" src="/public/img/influx.webp" alt="Your Company" />
                     </div>
+
+                    <h1 class="text-2xl mt-10 font-semibold">
+                        Register to Influx Payroll
+                    </h1>
 
                     <div class="mt-10">
                         <div>

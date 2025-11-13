@@ -5,10 +5,12 @@
             <div class="flex flex-1 flex-col justify-center px-4 py-12 sm:px-6 lg:flex-none lg:px-20 xl:px-24">
                 <div class="mx-auto w-full max-w-sm lg:w-96">
                     <div>
-                        <img class="h-10 w-auto"
-                            src="https://tailwindcss.com/plus-assets/img/logos/mark.svg?color=indigo&shade=600"
-                            alt="Your Company" />
+                        <img class="h-10 w-auto" src="/public/img/influx.webp" alt="Your Company" />
                     </div>
+
+                    <h1 class="text-2xl mt-10 font-semibold">
+                        Login to Influx Payroll
+                    </h1>
 
                     <div class="mt-10">
                         <div>
@@ -43,9 +45,6 @@
 
                                 <div class="grid grid-cols-1">
                                     <FormButton type="submit" class="w-full">Login</FormButton>
-                                    <div class="flex items-center justify-center mt-4">
-                                        <NuxtLink to="/" class="underline font-bold">Home</NuxtLink>
-                                    </div>
                                 </div>
                             </form>
                         </div>
