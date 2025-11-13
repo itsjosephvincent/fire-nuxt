@@ -14,7 +14,7 @@
 <script setup>
 import { ref } from 'vue'
 import { useUserStore } from '~/store/user'
-import { onAuthStateChanged, signOut } from 'firebase/auth'
+import { onAuthStateChanged } from 'firebase/auth'
 
 const runtimeConfig = useRuntimeConfig()
 
@@ -32,22 +32,11 @@ onMounted(() => {
     onAuthState()
 })
 
-async function logout() {
-    state.isPageLoading = true
-    try {
-        await signOut($auth)
-        userStore.resetUser()
-        state.isUserLoggedIn = false
-    } catch (error) {
-        state.error = error
-    }
-    state.isPageLoading = false
-}
-
 async function onAuthState() {
     onAuthStateChanged($auth, (user) => {
         if (user) {
             state.isUserLoggedIn = true
+            navigateTo('/user/dashboard')
         } else {
             state.isUserLoggedIn = false
         }

@@ -4,12 +4,12 @@ import { getFirestore } from 'firebase/firestore'
 
 export default defineNuxtPlugin(nuxtApp => {
     const firebaseConfig = {
-        apiKey: "AIzaSyDnqitSe6kO5MZj--psv4AXxdC5Ve_Rbrk",
-        authDomain: "davao-finds.firebaseapp.com",
-        projectId: "davao-finds",
-        storageBucket: "davao-finds.firebasestorage.app",
-        messagingSenderId: "480532826375",
-        appId: "1:480532826375:web:edd25c7bcc7b475d3adda2"
+        apiKey: "AIzaSyBjr-dRZSQ8NhTa4KJQZ1JGiMVKw9OyEVc",
+        authDomain: "influx-payroll-system.firebaseapp.com",
+        projectId: "influx-payroll-system",
+        storageBucket: "influx-payroll-system.firebasestorage.app",
+        messagingSenderId: "626133186415",
+        appId: "1:626133186415:web:0e871b0520d6a9fdbc9a9a"
     };
 
     const app = initializeApp(firebaseConfig)

@@ -9,7 +9,7 @@
                     </NuxtLink>
                 </div>
                 <div class="flex flex-1 justify-end">
-                    <NuxtLink to="/login" class="text-sm/6 font-semibold text-gray-900">
+                    <NuxtLink to="/login" class="text-base font-semibold text-gray-900">
                         Log in <span aria-hidden="true">&rarr;</span>
                     </NuxtLink>
                 </div>
