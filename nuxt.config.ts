@@ -16,4 +16,9 @@ export default defineNuxtConfig({
       autoprefixer: {},
     },
   },
+  runtimeConfig: {
+    public: {
+      appName: process.env.APP_NAME,
+    },
+  },
 })
