@@ -96,7 +96,7 @@
 </template>
 
 <script setup>
-import { createUserWithEmailAndPassword } from 'firebase/auth'
+import { createUserWithEmailAndPassword, onAuthStateChanged } from 'firebase/auth'
 import { addDoc, collection } from 'firebase/firestore'
 import { useUserStore } from '~/store/user'
 import { useVuelidate } from '@vuelidate/core'
@@ -115,6 +115,21 @@ const state = reactive({
     isPageLoading: false,
     error: null
 })
+
+onMounted(() => {
+    onAuthState()
+})
+
+async function onAuthState() {
+    onAuthStateChanged($auth, (user) => {
+        if (user) {
+            state.isUserLoggedIn = true
+            navigateTo('/user/dashboard')
+        } else {
+            state.isUserLoggedIn = false
+        }
+    })
+}
 
 watch(() => state.passwordConfirmation, (newValue) => {
     if (state.password != null && state.password !== newValue) {

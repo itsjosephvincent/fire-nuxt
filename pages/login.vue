@@ -61,7 +61,7 @@
 </template>
 
 <script setup>
-import { signInWithEmailAndPassword } from 'firebase/auth'
+import { signInWithEmailAndPassword, onAuthStateChanged } from 'firebase/auth'
 import { useUserStore } from '~/store/user'
 
 const nuxtApp = useNuxtApp()
@@ -75,7 +75,20 @@ const state = reactive({
     error: null,
 })
 
+onMounted(() => {
+    onAuthState()
+})
 
+async function onAuthState() {
+    onAuthStateChanged($auth, (user) => {
+        if (user) {
+            state.isUserLoggedIn = true
+            navigateTo('/user/dashboard')
+        } else {
+            state.isUserLoggedIn = false
+        }
+    })
+}
 
 async function login() {
     state.isPageLoading = true
